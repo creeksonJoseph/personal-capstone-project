@@ -6,7 +6,7 @@
 import axios from 'axios';
 
 // Base URL for all API requests
-export const BASE_URL = import.meta.env.VITE_API_URL || 'https://birch-hills-school.onrender.com/api';
+export const BASE_URL = import.meta.env.VITE_API_URL || 'http://102.133.146.89/api';
 
 // Create axios instance with default configuration
 const apiClient = axios.create({

@@ -63,13 +63,15 @@ MIDDLEWARE = [
 ]
 
 # Security Considerations
-if not DEBUG:
+# HTTPS_ENABLED must be explicitly set to True in env for HTTPS-only settings to apply.
+# This allows HTTP-only deployments (e.g. Azure VM) to work without redirect loops.
+if not DEBUG and config('HTTPS_ENABLED', default=False, cast=bool):
     # Cookie Security
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SAMESITE = 'None'
     CSRF_COOKIE_SAMESITE = 'None'
-    
+
     # HSTS
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -86,7 +88,9 @@ CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:5173',
     'http://127.0.0.1:5174',
     'http://127.0.0.1:5175',
-    'https://birch-hills-school.vercel.app',  # Production frontend
+    'https://birch-hills-school.vercel.app',  # Vercel production frontend
+    'http://102.133.146.89',                  # Azure VM frontend (port 80)
+    'http://102.133.146.89:80',               # Azure VM frontend (explicit port)
 ]
 
 # Allow additional origins from env
@@ -102,7 +106,9 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:5173',
     'http://127.0.0.1:5174',
     'http://127.0.0.1:5175',
-    'https://birch-hills-school.vercel.app',  # Production frontend
+    'https://birch-hills-school.vercel.app',  # Vercel production frontend
+    'http://102.133.146.89',                  # Azure VM frontend (port 80)
+    'http://102.133.146.89:80',               # Azure VM frontend (explicit port)
 ]
 
 # Allow additional trusted origins from env
@@ -159,7 +165,10 @@ DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL'),
         conn_max_age=600,
-        ssl_require=True
+        # ssl_require is driven by DB_SSL_REQUIRE env var.
+        # Set to False for the Docker internal DB (container-to-container has no SSL).
+        # Set to True for cloud DBs like Neon that require SSL.
+        ssl_require=config('DB_SSL_REQUIRE', default=False, cast=bool)
     )
 }
 

@@ -38,6 +38,8 @@ Azure VM (102.133.146.89) — Ubuntu Linux
 
 All browser API calls go to `http://102.133.146.89/api/` (port 80), and Nginx proxies them internally to the backend container on port 8000. This means the browser sees everything on the same origin, completely eliminating CORS browser errors. The backend port 8000 is **never exposed directly to the internet**.
 
+![Frontend preview — the live public-facing site served by Nginx on the VM](./screenshots/frontend%20preview.png)
+
 ---
 
 ## 2. VM Setup
@@ -78,6 +80,8 @@ The pipeline is defined at `.github/workflows/deploy.yml` and triggers on every 
    - Exports required environment variables (`DOCKER_USERNAME`, `AZURE_VM_HOST`).
    - `docker-compose pull` — pulls the freshly-built images from Docker Hub.
    - `docker-compose up -d` — restarts containers in the background.
+
+![GitHub Actions workflow — successful build and deploy run](./screenshots/a%20preview%20of%20github%20workflow%20success.png)
 
 ---
 
@@ -146,6 +150,8 @@ cd /app/backend \
 
 The backend container has a `depends_on` health check on the `db` container, so it only starts after PostgreSQL reports healthy.
 
+![Azure CLI — all three containers running healthy](./screenshots/a%20preview%20of%20logs%20in%20azure%20cli%20of%20the%20containers%20running.png)
+
 ---
 
 ## 8. Authentication Architecture on HTTP
@@ -179,6 +185,8 @@ sudo docker exec -it birch_hills_backend python /app/backend/manage.py shell -c 
 ```
 
 The custom admin dashboard is then accessible at: **`http://<IP_ADDRESS>/admin`**
+
+![Admin login page — the custom React admin portal](./screenshots/A%20preview%20of%20the%20admin%20login.png)
 
 ---
 

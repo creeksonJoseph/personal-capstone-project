@@ -44,7 +44,7 @@ services:
       db:
         condition: service_healthy
     command: >
-      sh -c "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 backend.wsgi:application"
+      sh -c "cd /app/backend && python manage.py migrate && gunicorn --bind 0.0.0.0:8000 backend.wsgi:application"
 
   frontend:
     build:

@@ -26,6 +26,14 @@ To keep the documentation comprehensive yet accessible, it is divided into speci
    - Authentication flow (PyJWT).
    - API endpoints structure and Django Admin.
 
+3. [**Cloud Deployment Guide**](./README.cloud.md)
+   - Azure VM infrastructure and Docker Compose architecture.
+   - GitHub Actions CI/CD pipeline walkthrough.
+   - Required GitHub secrets (names only — never commit values).
+   - Environment variable reference for all containers.
+   - HTTP-only deployment considerations (cookies, CORS, HTTPS).
+   - Initial admin account setup and operational commands.
+
 ## Features
 
 - **Public Site**: Home, Story, Admissions, Academics, Contact, Gallery, and Blog pages fully responsive for mobile and desktop viewing.
@@ -57,5 +65,8 @@ npm run dev
 
 ## Deployment Info
 
-- **Frontend**: Designed to be deployed on static hosting platforms like Vercel, Netlify, or Render (configured for `vite build`).
-- **Backend**: Production-ready with `gunicorn`, `whitenoise` (for static assets), and `dj-database-url` (for Heroku/Render-like database deployments).
+The full application is containerised with Docker and deployed to an **Azure Linux VM** via a GitHub Actions CI/CD pipeline. See the [**Cloud Deployment Guide**](./README.cloud.md) for complete documentation including:
+- The Nginx → Backend → PostgreSQL container architecture
+- GitHub secrets configuration
+- HTTP-only cookie and CORS considerations
+- Operational runbook commands

@@ -1,9 +1,12 @@
 node_modules/
+dist/
 .env
 github-secrets.env
 *.pem
-# Python virtual environment
-backend/myenv/
 __pycache__/
 *.sqlite3
-dist/
+backend/myenv/
+.git/
+.github/
+.gitignore
+docker-compose.yml

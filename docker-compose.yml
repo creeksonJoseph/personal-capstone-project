@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: birch_hills_db
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-neondb}
+      POSTGRES_USER: ${POSTGRES_USER:-neondb_owner}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password123}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-neondb_owner}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: ${DOCKER_USERNAME:-creeksonjoseph}/birch-hills-backend:latest
+    container_name: birch_hills_backend
+    restart: always
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-neondb_owner}:${POSTGRES_PASSWORD:-password123}@db:5432/${POSTGRES_DB:-neondb}
+      - DEBUG=False
+      - ALLOWED_HOSTS=*
+      - CORS_ALLOWED_ORIGINS=http://localhost,http://${AZURE_VM_HOST:-102.133.146.89}
+      - CSRF_TRUSTED_ORIGINS=http://localhost,http://${AZURE_VM_HOST:-102.133.146.89}
+      - SECRET_KEY=${SECRET_KEY:-k*sbz6g5#5=n5^xo(y$$9v)brn5i2$$*%u3+@&)mz(!lv7dqh+jp}
+      - CLOUDINARY_CLOUD_NAME=${CLOUDINARY_CLOUD_NAME}
+      - CLOUDINARY_API_KEY=${CLOUDINARY_API_KEY}
+      - CLOUDINARY_API_SECRET=${CLOUDINARY_API_SECRET}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      sh -c "python manage.py migrate && gunicorn --bind 0.0.0.0:8000 backend.wsgi:application"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: ${DOCKER_USERNAME:-creeksonjoseph}/birch-hills-frontend:latest
+    container_name: birch_hills_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

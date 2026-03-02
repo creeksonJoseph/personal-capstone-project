@@ -8,6 +8,12 @@ from datetime import datetime, timedelta
 from rest_framework.permissions import AllowAny
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
+from decouple import config
+
+# True only when HTTPS_ENABLED env var is explicitly set to True.
+# On the HTTP-only Azure VM this must be False, otherwise browsers
+# silently drop the cookie (Secure cookies are blocked over HTTP).
+HTTPS_ENABLED = config('HTTPS_ENABLED', default=False, cast=bool)
 
 @method_decorator(csrf_exempt, name='dispatch')
 class LoginView(APIView):
@@ -43,18 +49,14 @@ class LoginView(APIView):
             
             token = jwt.encode(payload, settings.SECRET_KEY, algorithm='HS256')
             
-            # Create httponly cookie
             response = Response({'message': 'Login successful', 'username': user.username})
-            # Determine cookie settings based on environment
-            is_production = not settings.DEBUG
-            
             response.set_cookie(
                 key='jwt',
                 value=token,
                 httponly=True,
-                secure=is_production,      # True in production
-                samesite='None' if is_production else 'Lax',  # None needed for cross-site
-                max_age=86400              # 24 hours
+                secure=HTTPS_ENABLED,                          # False on HTTP VM — allows browser to store the cookie
+                samesite='None' if HTTPS_ENABLED else 'Lax',  # Lax works fine for same-site HTTP requests
+                max_age=86400                                  # 24 hours
             )
             
             logger.info(f"User {username} logged in successfully")
@@ -63,14 +65,14 @@ class LoginView(APIView):
             logger.warning(f"Failed login attempt for username: {username}")
             return Response({'error': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)
 
+
 @method_decorator(csrf_exempt, name='dispatch')
 class LogoutView(APIView):
     def post(self, request):
         response = Response({'message': 'Logout successful'})
-        is_production = not settings.DEBUG
         response.delete_cookie(
             'jwt',
-            samesite='None' if is_production else 'Lax'
+            samesite='None' if HTTPS_ENABLED else 'Lax'  # Must match how the cookie was set
         )
         return response
 

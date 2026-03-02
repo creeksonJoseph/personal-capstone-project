@@ -1,0 +1,126 @@
+[
+  {
+    "id": 1,
+    "title": "Nurturing Curiosity: Our 2024 Science Fair",
+    "date": "January 24, 2026",
+    "author": "Dr. Emily Carter",
+    "category": "Academic",
+    "description": "Explore the groundbreaking projects and innovative thinking from this year's student-led exhibitions.",
+    "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800",
+    "content": [
+      "Last week, our school gymnasium was transformed into a bustling hub of scientific inquiry as we hosted our annual Science Fair. Over 200 students from all grade levels showcased their innovative projects, ranging from simple yet fascinating experiments to complex research studies.",
+      "The fair was a testament to our commitment to fostering curiosity and critical thinking in our students. Projects included everything from exploring renewable energy sources to investigating the effects of music on plant growth. The highlight of the event was the 'Student Showcase' where our most promising young scientists presented their work to a panel of judges consisting of local university professors and industry professionals.",
+      "We were thrilled to see such enthusiasm and creativity from our students. The Science Fair not only provides a platform for students to apply their knowledge in real-world scenarios but also helps them develop important skills such as problem-solving, communication, and collaboration. As we celebrate the success of this year's fair, we look forward to seeing even more amazing projects next year."
+    ],
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600"
+    ],
+    "status": "published"
+  },
+  {
+    "id": 6,
+    "title": "Upcoming Parent-Teacher Conference",
+    "date": "January 28, 2026",
+    "author": "Ms. Jennifer Martinez",
+    "category": "School Events",
+    "description": "Important information about the upcoming parent-teacher conference and how to schedule meetings.",
+    "imageUrl": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800",
+    "content": [
+      "We are pleased to announce that our annual Parent-Teacher Conference will be held on March 15th and 16th. This is an excellent opportunity for parents and teachers to discuss student progress, share concerns, and work together to support our children's learning."
+    ],
+    "galleryImages": [],
+    "status": "draft"
+  },
+  {
+    "id": 7,
+    "title": "New STEM Program Launch",
+    "date": "January 26, 2026",
+    "author": "Dr. Michael Chen",
+    "category": "Academic",
+    "description": "Introducing our new STEM program designed to prepare students for the future of technology and innovation.",
+    "imageUrl": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=800",
+    "content": [
+      "We are excited to launch our new STEM program that focuses on science, technology, engineering, and mathematics. This program will provide students with hands-on learning experiences and prepare them for careers in the rapidly growing tech industry."
+    ],
+    "galleryImages": [],
+    "status": "draft"
+  },
+  {
+    "id": 2,
+    "title": "Victory on the Field: Annual Sports Day",
+    "date": "January 20, 2026",
+    "author": "Coach Michael Johnson",
+    "category": "Sports",
+    "description": "A day filled with teamwork, determination, and spectacular athletic performances across all year groups.",
+    "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800",
+    "status": "published",
+    "content": [
+      "The sun was shining brightly as our school community gathered for the highly anticipated Annual Sports Day. It was a day filled with excitement, energy, and incredible displays of athleticism from students across all grade levels.",
+      "The day began with a grand parade where each class marched onto the field with banners and cheers. The opening ceremony featured inspiring speeches from our principal and student representatives, setting the tone for a day of friendly competition and sportsmanship. The events included everything from sprints and long jumps to relay races and tug-of-war competitions.",
+      "One of the most memorable moments of the day was the 4x100 relay race, where our senior boys' team broke the school record. The crowd erupted in cheers as the final runner crossed the finish line, securing victory for their team. It was a perfect example of the power of teamwork and determination.",
+      "As we celebrated the winners and praised all participants for their efforts, we were reminded of the importance of physical education and sports in our school. Sports Day not only promotes physical fitness but also helps students develop important life skills such as discipline, resilience, and the ability to work effectively in a team. We look forward to another successful Sports Day next year."
+    ],
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&q=80&w=600"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Budding Artists Win Regional Prize",
+    "date": "January 15, 2026",
+    "author": "Ms. Sarah Williams",
+    "category": "Arts",
+    "description": "Three of our pupils were recognized for their collaborative mural project 'Our Shared World.'",
+    "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=800",
+    "status": "published",
+    "content": [
+      "We are delighted to announce that three of our talented students have won first place in the regional art competition with their collaborative mural project titled 'Our Shared World.' The competition, which attracts entries from schools across the region, recognized the students' exceptional creativity and dedication to their craft.",
+      "The mural, which spans an entire wall in our school's art gallery, depicts a vibrant and diverse world where people from different cultures and backgrounds live together in harmony. The students spent months planning, sketching, and painting the mural, which serves as a powerful reminder of the importance of tolerance, understanding, and respect for others.",
+      "The judging panel was particularly impressed by the students' ability to work collaboratively and their innovative use of materials. The project not only showcases their artistic talents but also reflects our school's commitment to promoting diversity and inclusion. We are incredibly proud of our young artists and look forward to seeing their continued growth and success in the future."
+    ],
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?auto=format&fit=crop&q=80&w=600"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "New Library Wing Now Open",
+    "date": "January 12, 2026",
+    "author": "Mrs. Lisa Brown",
+    "category": "Facilities",
+    "description": "Our long-awaited literature center is finally here, featuring over 5,000 new titles.",
+    "imageUrl": "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=800",
+    "status": "published",
+    "content": [
+      "We are excited to announce the opening of our brand new library wing, which has been eagerly anticipated by our school community. The new wing features over 5,000 new titles, including fiction, non-fiction, and reference books, as well as state-of-the-art reading spaces and technology.",
+      "The library wing has been designed with our students' needs in mind. It includes quiet reading areas, group study rooms, and a digital media center equipped with the latest technology. The new books cover a wide range of topics, from classic literature to contemporary works, and include materials in multiple languages to support our diverse student population.",
+      "The opening of the new library wing is part of our ongoing commitment to providing our students with the best possible learning environment. We believe that a well-stocked and modern library is essential for fostering a love of reading and promoting academic excellence. We invite all students, parents, and staff to visit the new library wing and explore the many resources it has to offer."
+    ],
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=600"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Annual Spring Festival Celebrations",
+    "date": "January 10, 2026",
+    "author": "Ms. Jennifer Martinez",
+    "category": "School Events",
+    "description": "A vibrant celebration of culture, music, and community spirit with performances from all grade levels.",
+    "imageUrl": "https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800",
+    "status": "published",
+    "content": [
+      "Our annual Spring Festival brought together students, parents, and staff for a day of celebration and community building. The event featured cultural performances, music, dance, and delicious food from around the world.",
+      "Students from all grade levels showcased their talents through traditional dances, musical performances, and theatrical productions. The festival also included interactive workshops where attendees could learn about different cultures, try new foods, and participate in various activities.",
+      "The Spring Festival is a cherished tradition at our school that promotes cultural diversity and unity. It provides an opportunity for our school community to come together, share their heritage, and celebrate the rich tapestry of cultures that make up our student body. We look forward to continuing this tradition for many years to come."
+    ],
+    "galleryImages": [
+      "https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80&w=600",
+      "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80&w=600"
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+node_modules/
+.env
+# Python virtual environment
+backend/myenv/

@@ -30,29 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <!-- Tailwind CSS CDN -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#8C0D18",
-              accent: "#A9DCE6",
-              charcoal: "#1F1F1F",
-              "off-white": "#F7F7F7",
-              "background-light": "#F7F7F7",
-            },
-            fontFamily: {
-              display: ["'Playfair Display'", "serif"],
-              "serif-bold": ["'Playfair Display'", "serif"],
-              "serif-body": ["Lora", "serif"],
-              body: ["Lora", "serif"],
-            },
-          },
-        },
-      };
-    </script>
+    <!-- Tailwind is handled via PostCSS/Vite build pipeline, not CDN -->
     <style>
       .material-symbols-outlined {
         font-variation-settings:
@@ -70,15 +48,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      (function() {
-        // Ping backend to wake up Render instance
-        const BACKEND_URL = "https://birch-hills-school.onrender.com/api/";
-        fetch(BACKEND_URL, { mode: 'no-cors' })
-          .then(() => console.log('Backend wake-up ping sent'))
-          .catch(err => console.log('Backend wake-up ping failed', err));
-      })();
-    </script>
+    <!-- Backend is self-hosted on Docker — no cold-start warm-up ping needed -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
